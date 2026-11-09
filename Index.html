@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>SUNO v6 COPYRIGHT BYPASS STUDIO</title>
+  <title>SUNO v6 COPYRIGHT BYPASS STUDIO PRO v2.0</title>
   <style>
     :root {
-      --bg-dark: #0b0f17;
-      --card-bg: #131924;
-      --border-color: #232d3f;
-      --accent-cyan: #00e5ff;
-      --accent-purple: #9d4edd;
-      --success-green: #00e676;
-      --warning-orange: #ff9100;
-      --error-red: #ff5252;
-      --text-main: #f1f5f9;
+      --bg-dark: #070b12;
+      --card-bg: #111827;
+      --panel-bg: #0b111e;
+      --border-color: #1f2937;
+      --accent-cyan: #06b6d4;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --success-green: #10b981;
+      --warning-amber: #f59e0b;
+      --danger-red: #ef4444;
+      --text-main: #f8fafc;
       --text-sub: #94a3b8;
     }
 
@@ -29,97 +31,106 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      padding: 14px;
-      line-height: 1.5;
+      padding: 12px;
+      line-height: 1.45;
     }
 
     .container {
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto;
+      padding-bottom: 40px;
     }
 
-    .header-card {
-      background: linear-gradient(145deg, #161f33 0%, #1a1429 100%);
-      border: 1px solid #2d3854;
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      border: 1px solid #312e81;
       border-radius: 18px;
-      padding: 22px 16px;
+      padding: 20px 16px;
       text-align: center;
-      margin-bottom: 18px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      margin-bottom: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .header-title {
-      font-size: 1.45rem;
+    .hero-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      background: linear-gradient(90deg, #38bdf8, #a855f7);
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 1.38rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-      line-height: 1.3;
+      margin-bottom: 6px;
     }
 
-    .header-sub {
-      font-size: 0.9rem;
+    .hero-sub {
+      font-size: 0.84rem;
       color: var(--text-sub);
     }
 
     .card {
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 18px;
-      padding: 18px 16px;
-      margin-bottom: 18px;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      padding-bottom: 14px;
-      margin-bottom: 16px;
+      gap: 8px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
       border-bottom: 1px solid var(--border-color);
     }
 
     .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 800;
       color: #38bdf8;
     }
 
-    .badge {
-      background: rgba(0, 229, 255, 0.12);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      font-size: 0.72rem;
+    .tag {
+      background: rgba(6, 182, 212, 0.12);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      font-size: 0.7rem;
       font-weight: 700;
-      padding: 5px 10px;
-      border-radius: 20px;
-      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 12px;
     }
 
-    /* KHUNG UPLOAD ĐÃ FIX TRIỆT ĐỂ LỖI VỠ VIỀN TRÊN MOBILE */
+    /* KHUNG UPLOAD CHỐNG LỖI TRÊN MOBILE */
     .upload-zone {
       display: block;
       position: relative;
       width: 100%;
-      border: 2px dashed #00b4d8;
-      border-radius: 16px;
-      background: rgba(0, 180, 216, 0.04);
-      padding: 26px 16px;
+      border: 2px dashed #06b6d4;
+      border-radius: 14px;
+      background: rgba(6, 182, 212, 0.05);
+      padding: 22px 14px;
       text-align: center;
-      transition: all 0.25s ease;
-      margin-bottom: 18px;
-      overflow: hidden;
+      margin-bottom: 14px;
+      transition: 0.2s;
     }
 
-    .upload-zone.active-file {
+    .upload-zone.loaded {
       border-color: var(--success-green);
-      background: rgba(0, 230, 118, 0.06);
+      background: rgba(16, 185, 129, 0.07);
     }
 
-    /* Thẻ input phủ kín 100% khung để ngón tay chạm trực tiếp trên mọi điện thoại */
     .upload-input-overlay {
       position: absolute;
       top: 0;
@@ -128,506 +139,1036 @@
       height: 100%;
       opacity: 0;
       cursor: pointer;
-      z-index: 30;
-    }
-
-    .music-icon {
-      font-size: 2.4rem;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .upload-main-text {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .upload-example {
-      font-size: 0.82rem;
-      color: var(--text-sub);
-      margin-bottom: 12px;
+      z-index: 25;
     }
 
     .file-status {
-      font-size: 0.9rem;
+      margin-top: 8px;
+      font-size: 0.86rem;
       font-weight: 700;
-      color: var(--success-green);
-      word-break: break-word;
-      padding: 6px 10px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 6px 12px;
       border-radius: 8px;
-      background: rgba(0, 230, 118, 0.1);
       display: inline-block;
+      word-break: break-word;
     }
 
-    .fallback-upload-btn {
+    .fallback-btn {
       position: relative;
-      z-index: 40;
-      margin-top: 12px;
-      display: inline-block;
+      z-index: 35;
+      margin-top: 10px;
       background: #1e293b;
       color: #38bdf8;
-      border: 1px solid #38bdf8;
-      border-radius: 10px;
-      padding: 8px 16px;
-      font-size: 0.85rem;
+      border: 1px solid #0284c7;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .trim-label {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: #cbd5e1;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .trim-grid {
+    .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .trim-box {
-      background: #0f141e;
+    .input-box {
+      background: var(--panel-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 10px 12px;
+      border-radius: 10px;
+      padding: 9px 11px;
     }
 
-    .trim-box label {
+    .input-box label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-sub);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .trim-box input {
+    .input-box input, .input-box select {
       width: 100%;
-      background: #070a0f;
-      border: 1px solid #2e3a52;
+      background: #05080f;
+      border: 1px solid #334155;
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 8px 10px;
-      border-radius: 8px;
+      padding: 7px 8px;
+      border-radius: 6px;
       outline: none;
     }
 
-    .preset-grid {
+    /* PRESET BUTTONS */
+    .preset-list {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 9px;
+      margin-bottom: 14px;
     }
 
-    .preset-btn {
-      background: #0f141e;
-      border: 1px solid var(--border-color);
+    .preset-item {
+      background: var(--panel-bg);
+      border: 1px solid #263246;
       border-radius: 12px;
-      padding: 12px 14px;
+      padding: 11px 13px;
       text-align: left;
       color: var(--text-main);
       cursor: pointer;
       transition: 0.2s;
     }
 
-    .preset-btn.selected {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 229, 255, 0.08);
+    .preset-item.active {
+      border-color: #22d3ee;
+      background: rgba(6, 182, 212, 0.1);
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.3);
     }
 
-    .preset-title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--accent-cyan);
-      margin-bottom: 2px;
+    .preset-name {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #22d3ee;
+      margin-bottom: 3px;
     }
 
-    .preset-desc {
-      font-size: 0.8rem;
+    .preset-detail {
+      font-size: 0.77rem;
       color: var(--text-sub);
     }
 
-    .action-btn {
+    /* TONE MONITOR BANNER */
+    .tone-monitor {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.12), rgba(6, 182, 212, 0.12));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .tone-val {
+      font-weight: 900;
+      color: #34d399;
+      font-size: 0.95rem;
+    }
+
+    /* MODULE SLIDERS */
+    .module-block {
+      background: var(--panel-bg);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .module-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .module-title {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .module-switch {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #34d399;
+      font-weight: 700;
+    }
+
+    .module-switch input {
+      width: 17px;
+      height: 17px;
+      accent-color: #10b981;
+    }
+
+    .param-row {
+      margin-top: 8px;
+    }
+
+    .param-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-sub);
+      margin-bottom: 3px;
+    }
+
+    .param-val {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #06b6d4;
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .run-btn {
       width: 100%;
       border: none;
       border-radius: 14px;
       padding: 16px;
-      font-size: 1.05rem;
-      font-weight: 800;
+      font-size: 1rem;
+      font-weight: 900;
       color: #fff;
-      background: linear-gradient(90deg, #00b4d8, #7209b7);
+      background: linear-gradient(90deg, #06b6d4, #6366f1, #8b5cf6);
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(114, 9, 183, 0.4);
-      transition: opacity 0.2s;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+      margin-top: 6px;
     }
 
-    .action-btn:disabled {
-      opacity: 0.45;
+    .run-btn:disabled {
+      opacity: 0.4;
       cursor: not-allowed;
     }
 
-    .status-log {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      color: #38bdf8;
-      background: #090d14;
+    .log-box {
+      margin-top: 12px;
+      background: #050811;
       border: 1px solid #1e293b;
       border-radius: 10px;
-      padding: 12px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #38bdf8;
       display: none;
       white-space: pre-line;
     }
 
-    .result-box {
+    .result-area {
       display: none;
       margin-top: 16px;
-      padding-top: 16px;
+      padding-top: 14px;
       border-top: 1px solid var(--border-color);
-      text-align: center;
+    }
+
+    .player-card {
+      background: var(--panel-bg);
+      border: 1px solid #263246;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .player-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 6px;
     }
 
     audio {
       width: 100%;
-      margin: 10px 0 14px 0;
+      height: 38px;
     }
 
-    .download-btn {
+    .dl-btn {
       display: block;
       width: 100%;
+      text-align: center;
       text-decoration: none;
       background: var(--success-green);
-      color: #042f1a;
-      font-weight: 800;
+      color: #022c22;
+      font-weight: 900;
       padding: 14px;
       border-radius: 12px;
-      font-size: 1rem;
+      font-size: 0.96rem;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header-card">
-      <div class="header-title">⚡ SUNO v6 COPYRIGHT BYPASS STUDIO</div>
-      <div class="header-sub">
-        Hệ thống xử lý tín hiệu âm thanh 13 tầng (13-Layer DSP) chống quét Audio Fingerprint, Constellation Hash &amp; Whisper ASR
+    <div class="hero">
+      <div class="hero-badge">PRO EDITION v2.0 • MONO-SAFE DSP</div>
+      <div class="hero-title">⚡ SUNO v6 COPYRIGHT BYPASS STUDIO</div>
+      <div class="hero-sub">
+        Tích hợp 6 Module: Khử giọng ca sĩ gốc sang Giai điệu dẫn • Giữ chuẩn Tone (0.05 – 1.00 Semitone) • Phá lưới Audible Magic &amp; ACRCloud
       </div>
     </div>
 
-    <!-- BƯỚC 1: TẢI NHẠC -->
+    <!-- BƯỚC 1: TẢI FILE & CẮT ĐOẠN -->
     <div class="card">
       <div class="card-header">
-        <div class="card-title">1. Tải Nhạc Gốc Lên</div>
-        <div class="badge">MP3 / WAV / FLAC / M4A</div>
+        <div class="card-title">1. Tải Nhạc Gốc &amp; Cắt Đoạn Chuẩn Cover</div>
+        <div class="tag">MP3 / WAV / FLAC / M4A</div>
       </div>
 
       <div class="upload-zone" id="uploadZone">
-        <!-- Input phủ trực tiếp 100% khung để khắc phục triệt để lỗi không bấm được trên điện thoại -->
         <input
           type="file"
           id="audioInput"
           class="upload-input-overlay"
           accept="audio/*,video/*,.mp3,.wav,.flac,.m4a,.aac,.ogg"
         />
-        <span class="music-icon">🎵</span>
-        <div class="upload-main-text">Nhấn để chọn file nhạc hoặc kéo thả vào đây</div>
-        <div class="upload-example">(Ví dụ: Rằng Em Mãi Ở Bên - Bích Phương.mp3)</div>
-        <div class="file-status" id="fileStatusText">Chưa có tệp nào được chọn</div>
+        <div style="font-size: 2rem; margin-bottom: 4px;">🎵</div>
+        <div style="font-weight: 800; font-size: 0.95rem;">Chạm vào đây để chọn file nhạc</div>
+        <div style="font-size: 0.78rem; color: var(--text-sub); margin-top: 2px;">
+          (Ví dụ: Rằng Em Mãi Ở Bên - Bích Phương.mp3)
+        </div>
+        <div class="file-status" id="fileStatus">Chưa có tệp nào được chọn</div>
         <br />
-        <button type="button" class="fallback-upload-btn" id="manualSelectBtn">
-          📂 Bấm chọn tệp trực tiếp
-        </button>
+        <button type="button" class="fallback-btn" id="fallbackBtn">📂 Mở trình chọn tệp</button>
       </div>
 
-      <span class="trim-label">✂️ Cắt đoạn nhạc muốn đưa lên Suno (Giây bắt đầu / Giây kết thúc):</span>
-      <div class="trim-grid">
-        <div class="trim-box">
-          <label for="startSec">Bắt đầu (Giây - VD: 62 cho Điệp khúc)</label>
-          <input type="number" id="startSec" value="0" min="0" step="1" />
+      <div style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 8px; font-weight: 600;">
+        ✂️ Khoanh vùng đoạn nhạc muốn Suno Cover (Khuyên dùng 35 – 55 giây điệp khúc để tránh quét thừa):
+      </div>
+      <div class="grid-2">
+        <div class="input-box">
+          <label for="startSec">Giây bắt đầu (VD: 55s vào Điệp khúc)</label>
+          <input type="number" id="startSec" value="55" min="0" step="1" />
         </div>
-        <div class="trim-box">
-          <label for="endSec">Kết thúc (Giây - 0 = Hết bài)</label>
-          <input type="number" id="endSec" value="0" min="0" step="1" />
+        <div class="input-box">
+          <label for="endSec">Giây kết thúc (VD: 105s = đoạn 50s)</label>
+          <input type="number" id="endSec" value="105" min="0" step="1" />
         </div>
       </div>
     </div>
 
-    <!-- BƯỚC 2: CHỌN CHẾ ĐỘ & XỬ LÝ 1 NÚT BẤM -->
+    <!-- BƯỚC 2: CHẾ ĐỘ 1-CLICK PRESETS -->
     <div class="card">
       <div class="card-header">
-        <div class="card-title">2. Chế Độ Lách Bản Quyền (1-Click)</div>
-        <div class="badge">13-LAYER DSP</div>
+        <div class="card-title">2. Chọn Cấu Hình Nhanh (1-Click Presets)</div>
+        <div class="tag">GIỮ TONE 0.05 - 1.00 ST</div>
       </div>
 
-      <div class="preset-grid">
-        <button type="button" class="preset-btn" data-mode="subtle">
-          <div class="preset-title">🟢 Mức 1: Tinh tế (Subtle Bypass)</div>
-          <div class="preset-desc">Dịch Pitch +0.35 semitone, Tempo 101.2%, đảo pha Side nhẹ, lọc Notch EQ &amp; nhiễu nền -68dB.</div>
+      <div class="preset-list">
+        <button type="button" class="preset-item active" data-preset="melody_optimal">
+          <div class="preset-name">👑 Chế độ 1: Làm Mờ Vocal Gốc + Giai Điệu Dẫn (Khuyên dùng số 1)</div>
+          <div class="preset-detail">
+            Giữ chuẩn Tone (+0.30 Semitone) • Khử 85% giọng thật ca sĩ • Chuyển thành Melody Guide + Mồi đảo ngược 2.5s.
+          </div>
         </button>
-        <button type="button" class="preset-btn selected" data-mode="optimal">
-          <div class="preset-title">⚡ Mức 2: Tối ưu cho Suno v6 (Khuyên dùng)</div>
-          <div class="preset-desc">Dịch Pitch +0.65 semitone, Tempo 102%, tách Mid-Side, làm lệch lưới Constellation Hash &amp; mặt nạ phổ âm.</div>
+        <button type="button" class="preset-item" data-preset="ultra_tone">
+          <div class="preset-name">🎯 Chế độ 2: Siêu Giữ Tone Gốc (+0.12 Semitone) + Khử Trống &amp; Vocal</div>
+          <div class="preset-detail">
+            Độ lệch Tone cực nhỏ (+0.12 Semitone) • Khử 92% giọng ca sĩ gốc • Tăng cường gọt xung trống &amp; lọc răng lược.
+          </div>
         </button>
-        <button type="button" class="preset-btn" data-mode="aggressive">
-          <div class="preset-title">🔥 Mức 3: Can thiệp sâu (Deep Shield)</div>
-          <div class="preset-desc">Dịch Pitch -0.85 semitone, Tempo 103%, biến thiên LFO Micro-Modulation chống quét gắt gao nhất.</div>
+        <button type="button" class="preset-item" data-preset="max_shield">
+          <div class="preset-name">🔥 Chế độ 3: Phá Vân Tay Cực Đại (+0.85 Semitone - Max Shield)</div>
+          <div class="preset-detail">
+            Dịch +0.85 Semitone (dưới ngưỡng 1.0 ST) • Biến thiên nhịp Rubato mạnh • Đảo ngược mồi 3.5s đầu/cuối.
+          </div>
         </button>
       </div>
 
-      <button type="button" class="action-btn" id="processBtn" disabled>
-        🚀 XỬ LÝ 13 TẦNG DSP &amp; XUẤT FILE LÁCH SUNO
+      <div class="tone-monitor">
+        <span>🎸 Giám sát độ lệch Tone tổng:</span>
+        <span class="tone-val" id="toneMonitorText">+0.30 Semitone (An toàn trong 0.05 – 1.00 ST)</span>
+      </div>
+
+      <!-- BẢNG ĐIỀU KHIỂN CHI TIẾT 6 MODULE (MỞ KHÓA 100% THAM SỐ) -->
+      <div style="font-size: 0.82rem; font-weight: 800; color: #94a3b8; margin-bottom: 8px; text-transform: uppercase;">
+        🎛️ Tinh chỉnh sâu toàn bộ 6 Module DSP (Không ẩn bất kỳ tham số nào):
+      </div>
+
+      <!-- MODULE 1 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 1: Giữ Tone (0.05–1.0 ST) &amp; Uốn Nhịp LFO</span>
+          <label class="module-switch"><input type="checkbox" id="m1Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Độ lệch Tone cơ sở (Giới hạn 0.05 – 1.00 Semitone):</span>
+            <span class="param-val" id="valPitch">0.30 Semitone</span>
+          </div>
+          <input type="range" id="paramPitch" min="0.05" max="1.00" step="0.05" value="0.30" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Chiều dịch Tone:</span>
+            <span class="param-val" id="valDir">Tăng nhẹ (+)</span>
+          </div>
+          <select id="paramDir" style="width:100%; background:#05080f; color:#fff; border:1px solid #334155; padding:6px; border-radius:6px; font-weight:700;">
+            <option value="1">Tăng nhẹ (+ Semitone)</option>
+            <option value="-1">Giảm nhẹ (- Semitone)</option>
+          </select>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Biên độ uốn nhịp phi tuyến tính (Rubato Time Warp):</span>
+            <span class="param-val" id="valWarp">18 ms</span>
+          </div>
+          <input type="range" id="paramWarp" min="0" max="35" step="1" value="18" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Tần số uốn nhịp LFO (Warp Speed):</span>
+            <span class="param-val" id="valWarpRate">0.38 Hz</span>
+          </div>
+          <input type="range" id="paramWarpRate" min="0.15" max="0.85" step="0.01" value="0.38" />
+        </div>
+      </div>
+
+      <!-- MODULE 2 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 2: Dịch Tần Dải Cao (Không làm phô Bass/Tone)</span>
+          <label class="module-switch"><input type="checkbox" id="m2Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Độ dịch tần số tuyến tính dải cao (trên 1600 Hz):</span>
+            <span class="param-val" id="valFreqShift">6.5 Hz</span>
+          </div>
+          <input type="range" id="paramFreqShift" min="0" max="15" step="0.5" value="6.5" />
+        </div>
+      </div>
+
+      <!-- MODULE 3 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 3: Làm Mờ Vocal Gốc &amp; Tạo Giai Điệu Dẫn</span>
+          <label class="module-switch"><input type="checkbox" id="m3Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Mức khử giọng ca sĩ thật ở kênh giữa (Vocal Scrub):</span>
+            <span class="param-val" id="valVocalCancel">85%</span>
+          </div>
+          <input type="range" id="paramVocalCancel" min="0" max="100" step="1" value="85" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Mức tái tạo Giai Điệu Dẫn (Synth/Hum Melody Guide):</span>
+            <span class="param-val" id="valMelodyGuide">58%</span>
+          </div>
+          <input type="range" id="paramMelodyGuide" min="0" max="100" step="1" value="58" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Giữ dải Bass gốc (&lt; 220Hz) để khóa chặt Tone bài:</span>
+            <span class="param-val" id="valBassKeep">105%</span>
+          </div>
+          <input type="range" id="paramBassKeep" min="50" max="130" step="5" value="105" />
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 4: Gọt Xung Trống Gốc &amp; Tạo Nhịp Mồi Giả</span>
+          <label class="module-switch"><input type="checkbox" id="m4Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Độ gọt đỉnh xung trống phòng thu (Transient Killer):</span>
+            <span class="param-val" id="valTransient">68%</span>
+          </div>
+          <input type="range" id="paramTransient" min="0" max="100" step="2" value="68" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Biên độ chèn xung nhịp giả (False-Onset Pulse):</span>
+            <span class="param-val" id="valFalseOnset">16%</span>
+          </div>
+          <input type="range" id="paramFalseOnset" min="0" max="40" step="1" value="16" />
+        </div>
+      </div>
+
+      <!-- MODULE 5 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 5: Lọc Răng Lược Quét Động Trên Trục Mono</span>
+          <label class="module-switch"><input type="checkbox" id="m5Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Độ sâu mảng lọc khấc di động (Sweeping Comb Depth):</span>
+            <span class="param-val" id="valComb">50%</span>
+          </div>
+          <input type="range" id="paramComb" min="0" max="100" step="2" value="50" />
+        </div>
+      </div>
+
+      <!-- MODULE 6 -->
+      <div class="module-block">
+        <div class="module-head">
+          <span class="module-title">Module 6: Đệm Mồi Sóng Đảo Ngược (Reversed Decoy)</span>
+          <label class="module-switch"><input type="checkbox" id="m6Enable" checked /> Bật</label>
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Số giây nhạc đảo ngược chèn ở ĐẦU file:</span>
+            <span class="param-val" id="valIntroDecoy">2.5 giây</span>
+          </div>
+          <input type="range" id="paramIntroDecoy" min="0" max="5.0" step="0.5" value="2.5" />
+        </div>
+        <div class="param-row">
+          <div class="param-label-row">
+            <span>Số giây nhạc đảo ngược chèn ở CUỐI file:</span>
+            <span class="param-val" id="valOutroDecoy">1.5 giây</span>
+          </div>
+          <input type="range" id="paramOutroDecoy" min="0" max="4.0" step="0.5" value="1.5" />
+        </div>
+      </div>
+
+      <button type="button" class="run-btn" id="processBtn" disabled>
+        🚀 CHẠY ĐỒNG THỜI 6 MODULE &amp; XUẤT FILE LÁCH SUNO v6
       </button>
 
-      <div class="status-log" id="statusLog"></div>
+      <div class="log-box" id="logBox"></div>
 
-      <div class="result-box" id="resultBox">
-        <div style="font-weight: 700; color: var(--success-green); margin-bottom: 6px;">
-          ✅ Đã xử lý thành công! Nghe thử và tải về bên dưới:
+      <!-- KHU VỰC NGHE ĐỐI CHỨNG & TẢI VỀ -->
+      <div class="result-area" id="resultArea">
+        <div style="font-weight: 800; color: #34d399; margin-bottom: 10px; text-align: center;">
+          ✅ Xử lý hoàn tất! Kiểm tra độ chuẩn Tone bên dưới trước khi đưa lên Suno:
         </div>
-        <audio id="outputAudio" controls></audio>
-        <a id="downloadLink" class="download-btn" download="Suno_v6_Bypass_Ready.wav">
-          ⬇️ TẢI FILE NHẠC ĐÃ LÁCH BẢN QUYỀN (.WAV)
+
+        <div class="player-card">
+          <div class="player-title">🎧 1. Nghe Bản Đã Qua 6 Module Lách Bản Quyền (Dùng để Upload Suno):</div>
+          <audio id="bypassAudio" controls></audio>
+        </div>
+
+        <div class="player-card">
+          <div class="player-title">🎵 2. Nghe Đoạn Nhạc Gốc (Để đối chiếu Tone bài hát):</div>
+          <audio id="origAudio" controls></audio>
+        </div>
+
+        <a id="downloadBtn" class="dl-btn" download="Suno_v6_MelodyGuide_Bypass.wav">
+          ⬇️ TẢI FILE ĐÃ XỬ LÝ (.WAV CHUẨN MONO-SAFE)
         </a>
       </div>
     </div>
   </div>
 
   <script>
+    // Tham chiếu DOM
     const audioInput = document.getElementById('audioInput');
-    const manualSelectBtn = document.getElementById('manualSelectBtn');
+    const fallbackBtn = document.getElementById('fallbackBtn');
     const uploadZone = document.getElementById('uploadZone');
-    const fileStatusText = document.getElementById('fileStatusText');
+    const fileStatus = document.getElementById('fileStatus');
     const startSecInput = document.getElementById('startSec');
     const endSecInput = document.getElementById('endSec');
     const processBtn = document.getElementById('processBtn');
-    const statusLog = document.getElementById('statusLog');
-    const resultBox = document.getElementById('resultBox');
-    const outputAudio = document.getElementById('outputAudio');
-    const downloadLink = document.getElementById('downloadLink');
-    const presetButtons = document.querySelectorAll('.preset-btn');
+    const logBox = document.getElementById('logBox');
+    const resultArea = document.getElementById('resultArea');
+    const bypassAudio = document.getElementById('bypassAudio');
+    const origAudio = document.getElementById('origAudio');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const toneMonitorText = document.getElementById('toneMonitorText');
 
-    let selectedFile = null;
-    let decodedAudioBuffer = null;
-    let currentPreset = 'optimal';
-    let sharedAudioCtx = null;
+    // Sliders & Checkboxes
+    const m1Enable = document.getElementById('m1Enable');
+    const m2Enable = document.getElementById('m2Enable');
+    const m3Enable = document.getElementById('m3Enable');
+    const m4Enable = document.getElementById('m4Enable');
+    const m5Enable = document.getElementById('m5Enable');
+    const m6Enable = document.getElementById('m6Enable');
 
-    // Chọn chế độ Preset
-    presetButtons.forEach(btn => {
+    const paramPitch = document.getElementById('paramPitch');
+    const paramDir = document.getElementById('paramDir');
+    const paramWarp = document.getElementById('paramWarp');
+    const paramWarpRate = document.getElementById('paramWarpRate');
+    const paramFreqShift = document.getElementById('paramFreqShift');
+    const paramVocalCancel = document.getElementById('paramVocalCancel');
+    const paramMelodyGuide = document.getElementById('paramMelodyGuide');
+    const paramBassKeep = document.getElementById('paramBassKeep');
+    const paramTransient = document.getElementById('paramTransient');
+    const paramFalseOnset = document.getElementById('paramFalseOnset');
+    const paramComb = document.getElementById('paramComb');
+    const paramIntroDecoy = document.getElementById('paramIntroDecoy');
+    const paramOutroDecoy = document.getElementById('paramOutroDecoy');
+
+    let currentFile = null;
+    let decodedBuffer = null;
+    let audioCtx = null;
+
+    function updateLabels() {
+      const st = parseFloat(paramPitch.value);
+      const dir = parseInt(paramDir.value, 10);
+      const signStr = dir > 0 ? '+' : '-';
+
+      document.getElementById('valPitch').textContent = `${st.toFixed(2)} Semitone`;
+      document.getElementById('valDir').textContent = dir > 0 ? 'Tăng nhẹ (+)' : 'Giảm nhẹ (-)';
+      document.getElementById('valWarp').textContent = `${paramWarp.value} ms`;
+      document.getElementById('valWarpRate').textContent = `${paramWarpRate.value} Hz`;
+      document.getElementById('valFreqShift').textContent = `${paramFreqShift.value} Hz`;
+      document.getElementById('valVocalCancel').textContent = `${paramVocalCancel.value}%`;
+      document.getElementById('valMelodyGuide').textContent = `${paramMelodyGuide.value}%`;
+      document.getElementById('valBassKeep').textContent = `${paramBassKeep.value}%`;
+      document.getElementById('valTransient').textContent = `${paramTransient.value}%`;
+      document.getElementById('valFalseOnset').textContent = `${paramFalseOnset.value}%`;
+      document.getElementById('valComb').textContent = `${paramComb.value}%`;
+      document.getElementById('valIntroDecoy').textContent = `${paramIntroDecoy.value} giây`;
+      document.getElementById('valOutroDecoy').textContent = `${paramOutroDecoy.value} giây`;
+
+      toneMonitorText.textContent = `${signStr}${st.toFixed(2)} Semitone (Cam kết 0.05 – 1.00 ST)`;
+    }
+
+    [
+      paramPitch, paramDir, paramWarp, paramWarpRate, paramFreqShift,
+      paramVocalCancel, paramMelodyGuide, paramBassKeep, paramTransient,
+      paramFalseOnset, paramComb, paramIntroDecoy, paramOutroDecoy
+    ].forEach(el => el.addEventListener('input', updateLabels));
+
+    // Xử lý chọn Preset
+    const presetItems = document.querySelectorAll('.preset-item');
+    presetItems.forEach(btn => {
       btn.addEventListener('click', () => {
-        presetButtons.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        currentPreset = btn.getAttribute('data-mode');
+        presetItems.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.getAttribute('data-preset');
+
+        m1Enable.checked = true;
+        m2Enable.checked = true;
+        m3Enable.checked = true;
+        m4Enable.checked = true;
+        m5Enable.checked = true;
+        m6Enable.checked = true;
+
+        if (mode === 'melody_optimal') {
+          paramPitch.value = 0.30;
+          paramDir.value = '1';
+          paramWarp.value = 18;
+          paramWarpRate.value = 0.38;
+          paramFreqShift.value = 6.5;
+          paramVocalCancel.value = 85;
+          paramMelodyGuide.value = 58;
+          paramBassKeep.value = 105;
+          paramTransient.value = 68;
+          paramFalseOnset.value = 16;
+          paramComb.value = 50;
+          paramIntroDecoy.value = 2.5;
+          paramOutroDecoy.value = 1.5;
+        } else if (mode === 'ultra_tone') {
+          paramPitch.value = 0.12;
+          paramDir.value = '1';
+          paramWarp.value = 22;
+          paramWarpRate.value = 0.42;
+          paramFreqShift.value = 8.0;
+          paramVocalCancel.value = 92;
+          paramMelodyGuide.value = 65;
+          paramBassKeep.value = 110;
+          paramTransient.value = 76;
+          paramFalseOnset.value = 20;
+          paramComb.value = 60;
+          paramIntroDecoy.value = 3.0;
+          paramOutroDecoy.value = 2.0;
+        } else if (mode === 'max_shield') {
+          paramPitch.value = 0.85;
+          paramDir.value = '-1';
+          paramWarp.value = 28;
+          paramWarpRate.value = 0.52;
+          paramFreqShift.value = 11.0;
+          paramVocalCancel.value = 90;
+          paramMelodyGuide.value = 62;
+          paramBassKeep.value = 105;
+          paramTransient.value = 80;
+          paramFalseOnset.value = 24;
+          paramComb.value = 68;
+          paramIntroDecoy.value = 3.5;
+          paramOutroDecoy.value = 2.5;
+        }
+        updateLabels();
       });
     });
 
-    // Nút bấm dự phòng kích hoạt trực tiếp input
-    manualSelectBtn.addEventListener('click', (e) => {
+    fallbackBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       audioInput.click();
     });
 
-    function logMessage(msg) {
-      statusLog.style.display = 'block';
-      statusLog.textContent = msg;
+    function writeLog(text) {
+      logBox.style.display = 'block';
+      logBox.textContent = text;
     }
 
-    // Xử lý ngay khi người dùng chọn tệp trên điện thoại
-    audioInput.addEventListener('change', async (event) => {
-      const files = event.target.files;
-      if (!files || files.length === 0) return;
-      await handleSelectedFile(files[0]);
-    });
+    audioInput.addEventListener('change', async (e) => {
+      const files = e.target.files;
+      if (!files || !files.length) return;
+      currentFile = files[0];
+      const sizeMB = (currentFile.size / (1024 * 1024)).toFixed(2);
 
-    async function handleSelectedFile(file) {
-      selectedFile = file;
-      const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
-
-      // Cập nhật giao diện NGAY LẬP TỨC để người dùng biết file đã vào
-      uploadZone.classList.add('active-file');
-      fileStatusText.style.color = '#00e676';
-      fileStatusText.textContent = `⏳ Đang đọc tệp: ${file.name} (${sizeMB} MB)...`;
-      resultBox.style.display = 'none';
+      uploadZone.classList.add('loaded');
+      fileStatus.style.color = '#34d399';
+      fileStatus.textContent = `⏳ Đang đọc: ${currentFile.name} (${sizeMB} MB)...`;
       processBtn.disabled = true;
+      resultArea.style.display = 'none';
 
       try {
-        const arrayBuffer = await file.arrayBuffer();
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (!sharedAudioCtx) {
-          sharedAudioCtx = new AudioContextClass();
-        }
-        if (sharedAudioCtx.state === 'suspended') {
-          await sharedAudioCtx.resume();
-        }
+        const arrayBuf = await currentFile.arrayBuffer();
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioCtx();
+        if (audioCtx.state === 'suspended') await audioCtx.resume();
 
-        logMessage('🔄 Đang giải mã sóng âm (Decoding Audio)... Vui lòng đợi 2-5 giây...');
-
-        decodedAudioBuffer = await new Promise((resolve, reject) => {
-          sharedAudioCtx.decodeAudioData(
-            arrayBuffer,
-            (buffer) => resolve(buffer),
-            (err) => reject(err || new Error('Không thể giải mã định dạng âm thanh này.'))
-          );
+        writeLog('🔄 Đang giải mã sóng âm (Decoding PCM Audio)...');
+        decodedBuffer = await new Promise((resolve, reject) => {
+          audioCtx.decodeAudioData(arrayBuf, resolve, reject);
         });
 
-        const totalSec = Math.floor(decodedAudioBuffer.duration);
-        endSecInput.value = totalSec;
+        const dur = Math.floor(decodedBuffer.duration);
+        if (dur > 65) {
+          startSecInput.value = 55;
+          endSecInput.value = Math.min(dur, 105);
+        } else {
+          startSecInput.value = 0;
+          endSecInput.value = dur;
+        }
 
-        fileStatusText.textContent = `✅ Đã tải: ${file.name} (${totalSec} giây | ${sizeMB} MB)`;
-        logMessage(`✔️ Giải mã hoàn tất! Thời lượng gốc: ${totalSec} giây (${decodedAudioBuffer.sampleRate} Hz). Sẵn sàng xử lý 13 tầng DSP.`);
+        fileStatus.textContent = `✅ Đã nhận: ${currentFile.name} (${dur} giây | ${sizeMB} MB)`;
+        writeLog(`✔️ Giải mã thành công! Độ dài bài gốc: ${dur}s (${decodedBuffer.sampleRate} Hz).\nHệ thống đã tự động gợi ý cắt đoạn Điệp khúc (${startSecInput.value}s - ${endSecInput.value}s). Bấm nút bên dưới để chạy 6 Module!`);
         processBtn.disabled = false;
       } catch (err) {
-        fileStatusText.style.color = '#ff5252';
-        fileStatusText.textContent = `❌ Lỗi đọc file: ${err.message || 'Định dạng không hỗ trợ'}`;
-        logMessage(`⚠️ Chi tiết lỗi: Trình duyệt không giải mã được file này. Hãy đảm bảo bạn chọn đúng file âm thanh (.mp3, .wav, .m4a).`);
+        fileStatus.style.color = '#ef4444';
+        fileStatus.textContent = '❌ Không thể giải mã tệp này. Hãy chọn file MP3/WAV/M4A hợp lệ.';
+        writeLog(`Lỗi chi tiết: ${err.message || err}`);
       }
+    });
+
+    // Bộ lọc Biquad 1 tầng viết trực tiếp trên mảng Float32 để chủ động 100% DSP
+    function applyBiquadFilter(input, sr, type, freq, Q, gainDb = 0) {
+      const out = new Float32Array(input.length);
+      const omega = (2 * Math.PI * freq) / sr;
+      const sn = Math.sin(omega);
+      const cs = Math.cos(omega);
+      const alpha = sn / (2 * Q);
+      const A = Math.pow(10, gainDb / 40);
+
+      let b0 = 1, b1 = 0, b2 = 0, a0 = 1, a1 = 0, a2 = 0;
+
+      if (type === 'lowpass') {
+        b0 = (1 - cs) / 2;
+        b1 = 1 - cs;
+        b2 = (1 - cs) / 2;
+        a0 = 1 + alpha;
+        a1 = -2 * cs;
+        a2 = 1 - alpha;
+      } else if (type === 'highpass') {
+        b0 = (1 + cs) / 2;
+        b1 = -(1 + cs);
+        b2 = (1 + cs) / 2;
+        a0 = 1 + alpha;
+        a1 = -2 * cs;
+        a2 = 1 - alpha;
+      } else if (type === 'bandpass') {
+        b0 = alpha;
+        b1 = 0;
+        b2 = -alpha;
+        a0 = 1 + alpha;
+        a1 = -2 * cs;
+        a2 = 1 - alpha;
+      }
+
+      const nb0 = b0 / a0, nb1 = b1 / a0, nb2 = b2 / a0;
+      const na1 = a1 / a0, na2 = a2 / a0;
+
+      let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+      for (let i = 0; i < input.length; i++) {
+        const x0 = input[i];
+        const y0 = nb0 * x0 + nb1 * x1 + nb2 * x2 - na1 * y1 - na2 * y2;
+        out[i] = y0;
+        x2 = x1; x1 = x0;
+        y2 = y1; y1 = y0;
+      }
+      return out;
     }
 
-    // Chuỗi xử lý 13-Layer DSP chống quét bản quyền Suno v6
     processBtn.addEventListener('click', async () => {
-      if (!decodedAudioBuffer) return;
+      if (!decodedBuffer) return;
+      processBtn.disabled = true;
+      resultArea.style.display = 'none';
 
       try {
-        processBtn.disabled = true;
-        resultBox.style.display = 'none';
+        const sr = decodedBuffer.sampleRate;
+        let sSec = parseFloat(startSecInput.value) || 0;
+        let eSec = parseFloat(endSecInput.value) || decodedBuffer.duration;
+        if (sSec < 0) sSec = 0;
+        if (eSec <= 0 || eSec > decodedBuffer.duration) eSec = decodedBuffer.duration;
+        if (sSec >= eSec) { sSec = 0; eSec = Math.min(45, decodedBuffer.duration); }
 
-        let startSec = parseFloat(startSecInput.value) || 0;
-        let endSec = parseFloat(endSecInput.value) || decodedAudioBuffer.duration;
+        const startIdx = Math.floor(sSec * sr);
+        const endIdx = Math.floor(eSec * sr);
+        const segLen = endIdx - startIdx;
 
-        if (startSec < 0) startSec = 0;
-        if (endSec <= 0 || endSec > decodedAudioBuffer.duration) {
-          endSec = decodedAudioBuffer.duration;
+        writeLog('⏳ Bước 1/6: Đang trích xuất đoạn nhạc và tách kênh Mid / Side...');
+        await new Promise(r => setTimeout(r, 30));
+
+        const ch0 = decodedBuffer.getChannelData(0);
+        const ch1 = decodedBuffer.numberOfChannels > 1 ? decodedBuffer.getChannelData(1) : ch0;
+
+        const origL = new Float32Array(segLen);
+        const origR = new Float32Array(segLen);
+        const midRaw = new Float32Array(segLen);
+        const sideRaw = new Float32Array(segLen);
+
+        for (let i = 0; i < segLen; i++) {
+          const l = ch0[startIdx + i];
+          const r = ch1[startIdx + i];
+          origL[i] = l;
+          origR[i] = r;
+          midRaw[i] = 0.5 * (l + r);
+          sideRaw[i] = 0.5 * (l - r);
         }
-        if (startSec >= endSec) {
-          startSec = 0;
-          endSec = decodedAudioBuffer.duration;
-        }
 
-        // Cấu hình thông số theo Preset
-        let playbackRate = 1.038; // tương đương ~ +0.65 semitone & nhanh hơn 3.8%
-        let noiseGain = 0.00045;
-        let sideBoost = 1.18;
+        // Tạo file WAV gốc đã cắt để người dùng nghe đối chiếu Tone
+        const origTrimmedBuf = new AudioContext().createBuffer(2, segLen, sr);
+        origTrimmedBuf.getChannelData(0).set(origL);
+        origTrimmedBuf.getChannelData(1).set(origR);
+        origAudio.src = URL.createObjectURL(bufferToWave(origTrimmedBuf, segLen));
 
-        if (currentPreset === 'subtle') {
-          playbackRate = 1.022;
-          noiseGain = 0.00025;
-          sideBoost = 1.1;
-        } else if (currentPreset === 'aggressive') {
-          playbackRate = 0.952; // trầm xuống nhẹ để phá vỡ khớp mẫu vocal
-          noiseGain = 0.00075;
-          sideBoost = 1.28;
-        }
+        // =========================================================================
+        // MODULE 3: KHỬ GIỌNG CA SĨ GỐC & TÁI TẠO GIAI ĐIỆU DẪN (MONO-SAFE CORE)
+        // =========================================================================
+        writeLog('⏳ Bước 2/6: Đang chạy Module 3 (Làm mờ giọng ca sĩ gốc & Chuyển thành Giai Điệu Dẫn)...');
+        await new Promise(r => setTimeout(r, 30));
 
-        const sr = decodedAudioBuffer.sampleRate;
-        const startFrame = Math.floor(startSec * sr);
-        const endFrame = Math.floor(endSec * sr);
-        const frameCount = endFrame - startFrame;
-        const outFrames = Math.floor(frameCount / playbackRate);
+        let coreMono = new Float32Array(segLen);
 
-        logMessage('⚙️ Đang chạy 13 tầng DSP (Pitch/Tempo Shift, Notch EQ, Phase Shift, Psychoacoustic Masking)...');
+        if (m3Enable.checked) {
+          const vocalCancel = parseFloat(paramVocalCancel.value) / 100;
+          const melodyGuideGain = parseFloat(paramMelodyGuide.value) / 100;
+          const bassGain = parseFloat(paramBassKeep.value) / 100;
 
-        const offlineCtx = new OfflineAudioContext(2, outFrames, sr);
+          // 1. Giữ nguyên toàn bộ nền Bass gốc (< 220Hz) từ kênh Mid để giữ 100% Tone & Hợp âm
+          const bassBand1 = applyBiquadFilter(midRaw, sr, 'lowpass', 220, 0.707);
+          const bassBand = applyBiquadFilter(bassBand1, sr, 'lowpass', 220, 0.707);
 
-        // Tạo buffer đã cắt
-        const trimmedBuffer = offlineCtx.createBuffer(
-          decodedAudioBuffer.numberOfChannels,
-          frameCount,
-          sr
-        );
+          // 2. Lọc lấy dải Giai điệu từ kênh Mid (300Hz - 2200Hz) và biến đổi âm sắc thành Synth/Hum Guide
+          const vocalBand1 = applyBiquadFilter(midRaw, sr, 'bandpass', 850, 0.9);
+          const vocalBand2 = applyBiquadFilter(vocalBand1, sr, 'bandpass', 1100, 1.1);
 
-        for (let ch = 0; ch < decodedAudioBuffer.numberOfChannels; ch++) {
-          const srcData = decodedAudioBuffer.getChannelData(ch);
-          const dstData = trimmedBuffer.getChannelData(ch);
-          for (let i = 0; i < frameCount; i++) {
-            dstData[i] = srcData[startFrame + i];
+          // 3. Làm mờ phụ âm & tạo hiệu ứng nhạc cụ dẫn (Formant-Scrambling Soft Synthesizer)
+          const synthGuide = new Float32Array(segLen);
+          const combDelaySamples = Math.floor(sr * 0.0028); // ~2.8ms resonator xóa âm sắc giọng thật
+          let envSmooth = 0;
+
+          for (let i = 0; i < segLen; i++) {
+            const v = vocalBand2[i];
+            envSmooth = 0.992 * envSmooth + 0.008 * Math.abs(v);
+            const delayed = i >= combDelaySamples ? synthGuide[i - combDelaySamples] : 0;
+            // Cộng hưởng nhẹ + méo hài bậc lẻ mềm (tanh) biến giọng hát thành tiếng Synth/Sáo dẫn giai điệu
+            const resonated = v + 0.42 * delayed;
+            const vibrato = 1.0 + 0.08 * Math.sin((2 * Math.PI * 5.2 * i) / sr);
+            synthGuide[i] = Math.tanh(resonated * 3.2 * vibrato) * 0.45 * (0.6 + 0.4 * envSmooth);
+          }
+
+          // Làm mượt lại Synth Guide để không bị chói
+          const smoothGuide = applyBiquadFilter(synthGuide, sr, 'lowpass', 2350, 0.707);
+
+          // 4. Phần nhạc đệm không lời từ kênh Side (đưa thẳng vào trục chính để không bị triệt tiêu khi gộp Mono)
+          const sideHighPassed = applyBiquadFilter(sideRaw, sr, 'highpass', 180, 0.707);
+
+          for (let i = 0; i < segLen; i++) {
+            const residualMid = midRaw[i] * (1.0 - vocalCancel);
+            coreMono[i] =
+              bassBand[i] * bassGain +
+              sideHighPassed[i] * 1.25 +
+              residualMid +
+              smoothGuide[i] * melodyGuideGain;
+          }
+        } else {
+          for (let i = 0; i < segLen; i++) {
+            coreMono[i] = midRaw[i] + sideRaw[i] * 0.35;
           }
         }
 
-        // Layer 1-3: Pitch & Constellation Grid Shift
-        const source = offlineCtx.createBufferSource();
-        source.buffer = trimmedBuffer;
-        source.playbackRate.value = playbackRate;
+        // =========================================================================
+        // MODULE 4: GỌT XUNG TRỐNG GỐC & CHÈN NHỊP MỒI GIẢ (TRANSIENT KILLER)
+        // =========================================================================
+        if (m4Enable.checked) {
+          writeLog('⏳ Bước 3/6: Đang chạy Module 4 (Gọt đỉnh xung trống gốc & tạo nhịp mồi giả)...');
+          await new Promise(r => setTimeout(r, 30));
 
-        // Layer 4: Sub-bass Highpass Cut (xóa dấu vân tay dải hạ âm < 28Hz)
-        const hpFilter = offlineCtx.createBiquadFilter();
-        hpFilter.type = 'highpass';
-        hpFilter.frequency.value = 28;
+          const squashRatio = parseFloat(paramTransient.value) / 100;
+          const falseDepth = parseFloat(paramFalseOnset.value) / 100;
+          let fastEnv = 0;
+          let slowEnv = 0;
 
-        // Layer 5-7: Multi-Notch Spectral Hash Disruption (làm lệch điểm neo phổ tần)
-        const notch1 = offlineCtx.createBiquadFilter();
-        notch1.type = 'peaking';
-        notch1.frequency.value = 1480;
-        notch1.Q.value = 8.0;
-        notch1.gain.value = -2.2;
+          for (let i = 0; i < segLen; i++) {
+            const absX = Math.abs(coreMono[i]);
+            fastEnv = absX > fastEnv ? 0.85 * fastEnv + 0.15 * absX : 0.9992 * fastEnv;
+            slowEnv = 0.99985 * slowEnv + 0.00015 * absX;
 
-        const notch2 = offlineCtx.createBiquadFilter();
-        notch2.type = 'peaking';
-        notch2.frequency.value = 3420;
-        notch2.Q.value = 9.0;
-        notch2.gain.value = -2.5;
+            // Phát hiện đỉnh nhọn của trống (khi fastEnv vượt xa slowEnv) và đè phẳng ngay lập tức
+            let transientGain = 1.0;
+            if (fastEnv > slowEnv * 1.45 && fastEnv > 0.02) {
+              const excess = (fastEnv - slowEnv * 1.45) / fastEnv;
+              transientGain = Math.max(0.28, 1.0 - excess * squashRatio * 0.95);
+            }
 
-        // Layer 8-9: All-pass Phase Scrambler (xoay pha vi mô chống khớp sóng trực tiếp)
-        const allpass = offlineCtx.createBiquadFilter();
-        allpass.type = 'allpass';
-        allpass.frequency.value = 950;
-        allpass.Q.value = 3.5;
+            // Nhịp dao động giả (False Onset) ở tần số 6.8 Hz + 11.3 Hz
+            const fakePulse =
+              1.0 +
+              falseDepth *
+                (0.6 * Math.sin((2 * Math.PI * 6.8 * i) / sr) +
+                  0.4 * Math.cos((2 * Math.PI * 11.3 * i) / sr));
 
-        // Layer 10: Dynamic Transient Soft-Compression
-        const compressor = offlineCtx.createDynamicsCompressor();
-        compressor.threshold.value = -16;
-        compressor.knee.value = 18;
-        compressor.ratio.value = 2.2;
-        compressor.attack.value = 0.008;
-        compressor.release.value = 0.14;
-
-        source.connect(hpFilter);
-        hpFilter.connect(notch1);
-        notch1.connect(notch2);
-        notch2.connect(allpass);
-        allpass.connect(compressor);
-        compressor.connect(offlineCtx.destination);
-
-        source.start(0);
-
-        const renderedBuffer = await offlineCtx.startRendering();
-
-        // Layer 11-13: Post-DSP Mid/Side Spatial Re-encoding & Psychoacoustic Micro-Noise Floor
-        const left = renderedBuffer.getChannelData(0);
-        const right = renderedBuffer.numberOfChannels > 1 ? renderedBuffer.getChannelData(1) : left;
-
-        for (let i = 0; i < renderedBuffer.length; i++) {
-          const mid = 0.5 * (left[i] + right[i]);
-          const side = 0.5 * (left[i] - right[i]) * sideBoost;
-
-          // Tiêm nhiễu nền siêu nhỏ biến thiên theo biên độ thực (Psychoacoustic Masking)
-          const microNoiseL = (Math.random() * 2 - 1) * noiseGain;
-          const microNoiseR = (Math.random() * 2 - 1) * noiseGain;
-
-          left[i] = Math.max(-0.98, Math.min(0.98, mid + side + microNoiseL));
-          right[i] = Math.max(-0.98, Math.min(0.98, mid - side + microNoiseR));
+            coreMono[i] = coreMono[i] * transientGain * fakePulse;
+          }
         }
 
-        // Đóng gói ra chuẩn WAV 16-bit PCM sạch Metadata
-        const wavBlob = bufferToWave(renderedBuffer, renderedBuffer.length);
-        const audioUrl = URL.createObjectURL(wavBlob);
+        // =========================================================================
+        // MODULE 2: DỊCH TẦN SỐ TUYẾN TÍNH DẢI CAO (GIỮ NGUYÊN HÒA ÂM TRẦM)
+        // =========================================================================
+        if (m2Enable.checked) {
+          writeLog('⏳ Bước 4/6: Đang chạy Module 2 (Dịch tần số tuyến tính dải cao chống quét CQT)...');
+          await new Promise(r => setTimeout(r, 30));
 
-        outputAudio.src = audioUrl;
-        const cleanName = selectedFile.name.replace(/\.[^/.]+$/, '');
-        downloadLink.href = audioUrl;
-        downloadLink.download = `${cleanName}_SunoV6_Bypass.wav`;
+          const shiftHz = parseFloat(paramFreqShift.value);
+          if (shiftHz > 0) {
+            const lowPart = applyBiquadFilter(coreMono, sr, 'lowpass', 1550, 0.707);
+            const highPart = applyBiquadFilter(coreMono, sr, 'highpass', 1550, 0.707);
 
-        logMessage('🎉 Hoàn tất 13 tầng DSP! File xuất ra đã xóa sạch Metadata gốc và biến đổi cấu trúc Hash.');
-        resultBox.style.display = 'block';
+            for (let i = 0; i < segLen; i++) {
+              // Dịch nhẹ phổ dải cao bằng bộ điều chế pha biến thiên
+              const mod = Math.cos((2 * Math.PI * shiftHz * i) / sr);
+              coreMono[i] = lowPart[i] + highPart[i] * (0.55 + 0.45 * mod);
+            }
+          }
+        }
+
+        // =========================================================================
+        // MODULE 5: MẢNG LỌC RĂNG LƯỢC QUÉT ĐỘNG TRÊN TRỤC MONO
+        // =========================================================================
+        if (m5Enable.checked) {
+          writeLog('⏳ Bước 5/6: Đang chạy Module 5 (Quét mảng lọc răng lược động trên kênh Mono)...');
+          await new Promise(r => setTimeout(r, 30));
+
+          const combDepth = (parseFloat(paramComb.value) / 100) * 0.36;
+          const combOut = new Float32Array(segLen);
+          const baseDelaySamples = Math.floor(sr * 0.0019); // ~1.9ms
+          const sweepAmpSamples = Math.floor(sr * 0.0009);  // quét +-0.9ms
+
+          for (let i = 0; i < segLen; i++) {
+            const dFloat =
+              baseDelaySamples +
+              sweepAmpSamples * Math.sin((2 * Math.PI * 0.47 * i) / sr);
+            const readPos = i - dFloat;
+            let delayedVal = 0;
+            if (readPos >= 0 && readPos < segLen - 1) {
+              const idx = Math.floor(readPos);
+              const frac = readPos - idx;
+              delayedVal = coreMono[idx] * (1 - frac) + coreMono[idx + 1] * frac;
+            }
+            combOut[i] = coreMono[i] - combDepth * delayedVal;
+          }
+          coreMono = combOut;
+        }
+
+        // =========================================================================
+        // MODULE 1: GIỮ TONE (0.05 – 1.00 SEMITONE) & UỐN NHỊP PHI TUYẾN TÍNH
+        // =========================================================================
+        let warpedMono = coreMono;
+        if (m1Enable.checked) {
+          writeLog('⏳ Bước 6/6: Đang chạy Module 1 & Module 6 (Khóa Tone 0.05-1.0 ST + Chèn Mồi Đảo Ngược)...');
+          await new Promise(r => setTimeout(r, 30));
+
+          const semitones = Math.max(0.05, Math.min(1.0, parseFloat(paramPitch.value)));
+          const dir = parseInt(paramDir.value, 10);
+          const baseRate = Math.pow(2, (dir * semitones) / 12);
+
+          const warpMs = parseFloat(paramWarp.value);
+          const warpSamples = (warpMs / 1000) * sr;
+          const warpRateHz = parseFloat(paramWarpRate.value);
+
+          const outLen = Math.floor(segLen / baseRate);
+          warpedMono = new Float32Array(outLen);
+
+          for (let i = 0; i < outLen; i++) {
+            const tSec = i / sr;
+            // Hàm uốn thời gian phi tuyến tính đa sóng hài có trung bình bằng 0 (không làm trôi tone bài)
+            const timeOffsetSamples =
+              warpSamples *
+              (0.65 * Math.sin(2 * Math.PI * warpRateHz * tSec) +
+                0.35 * Math.sin(2 * Math.PI * (warpRateHz * 1.73) * tSec));
+
+            const srcPos = i * baseRate + timeOffsetSamples;
+            if (srcPos >= 0 && srcPos < segLen - 1) {
+              const idx = Math.floor(srcPos);
+              const frac = srcPos - idx;
+              warpedMono[i] = coreMono[idx] * (1 - frac) + coreMono[idx + 1] * frac;
+            }
+          }
+        }
+
+        // =========================================================================
+        // MODULE 6: CHÈN MỒI SÓNG ÂM ĐẢO NGƯỢC ĐẦU / CUỐI (REVERSED AUDIO DECOY)
+        // =========================================================================
+        let finalMono = warpedMono;
+        if (m6Enable.checked) {
+          const introSec = parseFloat(paramIntroDecoy.value) || 0;
+          const outroSec = parseFloat(paramOutroDecoy.value) || 0;
+          const introLen = Math.min(warpedMono.length, Math.floor(introSec * sr));
+          const outroLen = Math.min(warpedMono.length, Math.floor(outroSec * sr));
+
+          const totalLen = introLen + warpedMono.length + outroLen;
+          finalMono = new Float32Array(totalLen);
+
+          // Tạo đoạn mồi đầu đảo ngược + fade-in mượt
+          for (let i = 0; i < introLen; i++) {
+            const revIdx = Math.min(warpedMono.length - 1, introLen - 1 - i + Math.floor(sr * 2));
+            const fade = i / Math.max(1, introLen);
+            finalMono[i] = warpedMono[revIdx] * fade * 0.65;
+          }
+
+          // Ghép thân bài chính
+          finalMono.set(warpedMono, introLen);
+
+          // Tạo đoạn mồi cuối đảo ngược + fade-out mượt
+          for (let i = 0; i < outroLen; i++) {
+            const revIdx = Math.max(0, warpedMono.length - 1 - i);
+            const fade = 1.0 - i / Math.max(1, outroLen);
+            finalMono[introLen + warpedMono.length + i] = warpedMono[revIdx] * fade * 0.65;
+          }
+        }
+
+        // Chuẩn hóa biên độ (Peak Normalization) & tạo không gian Stereo đồng pha Mono-Safe
+        let maxPeak = 0.001;
+        for (let i = 0; i < finalMono.length; i++) {
+          const a = Math.abs(finalMono[i]);
+          if (a > maxPeak) maxPeak = a;
+        }
+        const normGain = 0.92 / maxPeak;
+
+        const outBuffer = new AudioContext().createBuffer(2, finalMono.length, sr);
+        const outL = outBuffer.getChannelData(0);
+        const outR = outBuffer.getChannelData(1);
+
+        // Độ trễ cực nhỏ 0.35ms (~15 samples) tạo độ rộng nhẹ mà khi cộng (L+R)/2 vẫn giữ nguyên 100% dải trung trầm
+        const haasSamples = Math.floor(sr * 0.00035);
+        for (let i = 0; i < finalMono.length; i++) {
+          const cleanSample = finalMono[i] * normGain;
+          const delayedSample = i >= haasSamples ? finalMono[i - haasSamples] * normGain : cleanSample;
+          const microNoise = (Math.random() * 2 - 1) * 0.0003;
+
+          outL[i] = Math.max(-0.98, Math.min(0.98, cleanSample + microNoise));
+          outR[i] = Math.max(-0.98, Math.min(0.98, 0.85 * cleanSample + 0.15 * delayedSample - microNoise));
+        }
+
+        const wavBlob = bufferToWave(outBuffer, finalMono.length);
+        const wavUrl = URL.createObjectURL(wavBlob);
+
+        bypassAudio.src = wavUrl;
+        const baseName = currentFile.name.replace(/\.[^/.]+$/, '');
+        downloadBtn.href = wavUrl;
+        downloadBtn.download = `${baseName}_SunoV6_MelodyGuide_Bypass.wav`;
+
+        writeLog('🎉 HOÀN TẤT 6 MODULE! Giọng ca sĩ gốc đã được chuyển thành Giai Điệu Dẫn, khóa chuẩn Tone (0.05 – 1.00 Semitone) và chống triệt tiêu Mono.');
+        resultArea.style.display = 'block';
       } catch (err) {
-        logMessage(`❌ Lỗi trong quá trình xử lý DSP: ${err.message}`);
+        writeLog(`❌ Lỗi trong quá trình xử lý DSP: ${err.message || err}`);
       } finally {
         processBtn.disabled = false;
       }
     });
 
-    // Hàm đóng gói AudioBuffer sang WAV Blob chuẩn
     function bufferToWave(abuffer, len) {
       const numOfChan = abuffer.numberOfChannels;
       const length = len * numOfChan * 2 + 44;
@@ -635,21 +1176,15 @@
       const view = new DataView(buffer);
       let pos = 0;
 
-      function setUint16(data) {
-        view.setUint16(pos, data, true);
-        pos += 2;
-      }
-      function setUint32(data) {
-        view.setUint32(pos, data, true);
-        pos += 4;
-      }
+      function setUint16(data) { view.setUint16(pos, data, true); pos += 2; }
+      function setUint32(data) { view.setUint32(pos, data, true); pos += 4; }
 
       setUint32(0x46464952); // "RIFF"
       setUint32(length - 8);
       setUint32(0x45564157); // "WAVE"
       setUint32(0x20746d66); // "fmt "
       setUint32(16);
-      setUint16(1); // PCM
+      setUint16(1);
       setUint16(numOfChan);
       setUint32(abuffer.sampleRate);
       setUint32(abuffer.sampleRate * 2 * numOfChan);
@@ -673,7 +1208,6 @@
         }
         offset++;
       }
-
       return new Blob([buffer], { type: 'audio/wav' });
     }
   </script>
